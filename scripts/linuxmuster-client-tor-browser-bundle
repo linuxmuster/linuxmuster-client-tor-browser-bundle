@@ -1,0 +1,79 @@
+#!/usr/bin/perl -w
+# This Script (linuxmuster-client-extras-login) was created by Rüdiger Beck
+# It is released under the GPL Version 3
+# For Bugs send mail to (jeffbeck-at-web.de)
+
+use strict;
+use Getopt::Long;
+use File::Basename;
+use Log::Log4perl qw(:easy);
+use English;
+
+my $home=$ENV{'HOME'};
+my $UID_name=getpwuid($UID);
+my $EUID_name=getpwuid($EUID);
+
+# configure logging
+my $log="/tmp/linuxmuster-client-tor-browser-bundle.log.".$UID_name;
+Log::Log4perl->easy_init({ 
+                level   => $INFO,
+                file    => ">>$log" } );    
+
+
+my $config_dir="/etc/linuxmuster-client/tor-browser-bundle";
+my $help=0;
+my $info=0;
+
+
+# Parsen der Optionen
+my $testopt=GetOptions(
+           "help|h" => \$help,
+           "info|i" => \$info,
+          );
+
+# Prüfen, ob Optionen erkannt wurden, sonst Abbruch
+&check_options($testopt);
+
+
+
+if ($help==1){
+   print('
+
+This script installs the tor browser-bundle for a user
+
+Options
+  -h  / --help  
+   show this help
+
+');
+   print "\n";
+   exit;
+}
+
+
+if (not -d $config_dir){
+    print "\nERROR: Configuration directory\n",
+          "    $config_dir\n",
+          " does not exist!\n\n";
+    exit;
+}
+
+
+############################################################
+# subs
+############################################################
+sub  check_options{
+   my ($parse_ergebnis) = @_;
+   if (not $parse_ergebnis==1){
+      my @list = split(/\//,$0);
+      my $scriptname = pop @list;
+      print "\nYou have made a mistake, when specifying options.\n"; 
+      print "See error message above. \n\n";
+      print "... $scriptname is terminating.\n\n";
+      exit;
+   } else {
+      #print "All options  were recognized.\n";
+   }
+
+}
+
