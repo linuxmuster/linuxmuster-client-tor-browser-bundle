@@ -1,10 +1,24 @@
 #!/bin/sh
 
+DOWNLOAD_LANG=de
+VERSION=2.2.38-2
+
 echo "########## START: Downloading tor browser bundles"
 
 
+# Lang Schleife starts here
+DOWNLOADS=/var/lib/linuxmuster-client-tor-browser-bundle/downloads/$DOWNLOAD_LANG
+mkdir -p $DOWNLOADS
 
+# 32bit Version
+cd $DOWNLOADS; wget -t 10 -c --timestamping https://www.torproject.org/dist/torbrowser/linux/tor-browser-gnu-linux-i686-$VERSION-dev-$DOWNLOAD_LANG.tar.gz
+cd $DOWNLOADS; wget -t 10 -c --timestamping https://www.torproject.org/dist/torbrowser/linux/tor-browser-gnu-linux-i686-$VERSION-dev-$DOWNLOAD_LANG.tar.gz.asc
 
+# 64bit Version
+cd $DOWNLOADS; wget -t 10 -c --timestamping https://www.torproject.org/dist/torbrowser/linux/tor-browser-gnu-linux-x86_64-$VERSION-dev-$DOWNLOAD_LANG.tar.gz
+cd $DOWNLOADS; wget -t 10 -c --timestamping https://www.torproject.org/dist/torbrowser/linux/tor-browser-gnu-linux-x86_64-$VERSION-dev-$DOWNLOAD_LANG.tar.gz.asc
+
+# Lang Schleife ends here
 
 
 echo "########## DONE: Downloading tor browser bundles"

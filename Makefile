@@ -43,3 +43,6 @@ deb:
 	@echo 'Do not forget to tag this version in git'
 	@echo ''
 
+
+clean:
+	# delete stuff after building package
