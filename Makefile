@@ -29,7 +29,9 @@ install:
 	@echo '   * Installing downloader script'
 	@install -d -m755 -oroot -groot $(SBIN)
 	@install -oroot -groot --mode=0775 scripts/linuxmuster-client-tor-browser-bundle-downloader $(SBIN)
-	@echo '   * Adding Icon'
+	@echo '   * Installing starter script'
+	@install -d -m755 -oroot -groot $(BIN)
+	@install -oroot -groot --mode=0775 scripts/linuxmuster-client-tor-browser-bundle $(BIN)
 
 
 
