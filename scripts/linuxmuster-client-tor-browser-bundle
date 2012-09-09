@@ -8,6 +8,7 @@ use Getopt::Long;
 use File::Basename;
 use Log::Log4perl qw(:easy);
 use English;
+use File::Path qw(remove_tree);
 
 my $home=$ENV{'HOME'};
 my $UID_name=getpwuid($UID);
@@ -51,12 +52,53 @@ Options
 }
 
 
-if (not -d $config_dir){
-    print "\nERROR: Configuration directory\n",
-          "    $config_dir\n",
-          " does not exist!\n\n";
+#if (not -d $config_dir){
+#    print "\nERROR: Configuration directory\n",
+#          "    $config_dir\n",
+#          " does not exist!\n\n";
+#    exit;
+#}
+
+
+my $downloads="/var/lib/linuxmuster-client-tor-browser-bundle/downloads/de";
+
+my $target_dir="/tmp/".$UID_name."-linuxmuster-client-tor-browser-bundle";
+my $tbb_file="";
+
+
+my $uname = `uname -m`;
+chomp($uname);
+
+if ($uname eq "x86_64"){
+    $tbb_file=$downloads."/tor-browser-gnu-linux-x86_64-2.2.38-2-dev-de.tar.gz";
+} elsif ($uname eq "i686"){
+    $tbb_file=$downloads."/tor-browser-gnu-linux-i686-2.2.38-2-dev-de.tar.gz";
+} else {
+    print "\nCould not detect architecture of the kernel from $uname.\n\n";
     exit;
 }
+
+
+# Clean up if necessary
+if (-d $target_dir){
+    print "Deleting $target_dir\n";
+    remove_tree("$target_dir");
+}
+
+
+# Installing
+print "Unpacking $tbb_file to $target_dir\n";
+system("mkdir -p $target_dir");
+my $command="tar xzvf $tbb_file -C $target_dir";
+print "$command\n";
+system("$command");
+
+
+# Starting
+my $binary=$target_dir."/tor-browser_de/start-tor-browser";
+system("$binary");
+
+
 
 
 ############################################################
