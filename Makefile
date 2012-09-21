@@ -7,6 +7,8 @@ CONF=$(DESTDIR)/etc/linuxmuster-client/tor-browser-bundle
 BIN=$(DESTDIR)/usr/bin
 SBIN=$(DESTDIR)/usr/sbin
 SHARE=$(DESTDIR)/usr/share/linuxmuster-client-tor-browser-bundle
+DESKTOP=$(DESTDIR)/usr/share/applications
+ICON=$(DESTDIR)/usr/share/pixmaps
 ETC=$(DESTDIR)/etc/sudoers.d
 
 help:
@@ -32,6 +34,12 @@ install:
 	@echo '   * Installing starter script'
 	@install -d -m755 -oroot -groot $(BIN)
 	@install -oroot -groot --mode=0775 scripts/linuxmuster-client-tor-browser-bundle $(BIN)
+	@echo '   * Installing unity dash entry'
+	@install -d -m0755 -oroot -groot $(DESKTOP)
+	@install -oroot -groot --mode=0644 icons/tor-browser-bundle.desktop $(DESKTOP)
+	@echo '   * Installing icon'
+	@install -d -m0755 -oroot -groot $(ICON)
+	@install -oroot -groot --mode=0644 icons/tor-browser-bundle.png $(ICON)
 
 
 

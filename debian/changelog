@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.0.2-1) linuxmuster-client-testing; urgency=low
+
+  * New Package Server
+
+ -- Ruediger Beck <bz@j1009p16.bszleo.de>  Tue, 18 Sep 2012 17:56:38 +0200
+
 linuxmuster-client-tor-browser-bundle (0.0.1-1) lenny; urgency=low
 
   * First Revision

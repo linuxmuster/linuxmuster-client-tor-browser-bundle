@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Tor Browser Bundle
+Comment=Installing and starting the Tor Browser Bundle
+Comment[de]=Installiert und started das Tor Browser Bundle
+TryExec=linuxmuster-client-tor-browser-bundle
+Exec=linuxmuster-client-tor-browser-bundle
+Icon=tor-browser-bundle
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
+Terminal=false
