@@ -1,4 +1,16 @@
+############################################################
 # Create a package:
 
 cd linuxmuster-client-tor-browser-bundle
 make deb
+
+
+############################################################
+# updating for a new TBB Version:
+
+Edit (=change Version number) in:
+
+   1)  scripts/linuxmuster-client-tor-browser-bundle-downloader
+       Variable VERSION at the beginning of the file
+   2)  debian/contol   First Line of package description
+
