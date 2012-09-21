@@ -12,5 +12,8 @@ Edit (=change Version number) in:
 
    1)  scripts/linuxmuster-client-tor-browser-bundle-downloader
        Variable VERSION at the beginning of the file
-   2)  debian/contol   First Line of package description
+   2)  scripts/linuxmuster-client-tor-browser-bundle
+       Variable $version at the beginning of the file
+   3)  debian/contol   
+       First Line of package description
 

@@ -1,3 +1,15 @@
+linuxmuster-client-tor-browser-bundle (0.0.4-1) linuxmuster-client-testing; urgency=low
+
+  * Bugfix Relese
+
+ -- Ruediger Beck <bz@j1009p16.bszleo.de>  Fri, 21 Sep 2012 15:32:33 +0200
+
+linuxmuster-client-tor-browser-bundle (0.0.3-1) linuxmuster-client-testing; urgency=low
+
+  * Added Icon, Download version 2.2.39-1 
+
+ -- Ruediger Beck <bz@j1009p16.bszleo.de>  Fri, 21 Sep 2012 15:13:35 +0200
+
 linuxmuster-client-tor-browser-bundle (0.0.2-1) linuxmuster-client-testing; urgency=low
 
   * New Package Server
