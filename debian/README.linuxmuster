@@ -1,7 +1,9 @@
 ############################################################
 # Create a package:
 
+
 cd linuxmuster-client-tor-browser-bundle
+dch -i
 make deb
 
 
