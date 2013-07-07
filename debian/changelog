@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.1.6-1) precise; urgency=low
+
+  * New upstream 2.3.25-10
+
+ -- bz <bz@overpower>  Sun, 07 Jul 2013 02:52:42 +0200
+
 linuxmuster-client-tor-browser-bundle (0.1.5-1) precise; urgency=low
 
   * New upstream 2.3.25-4

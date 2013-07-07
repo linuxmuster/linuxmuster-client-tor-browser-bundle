@@ -12,5 +12,5 @@ Architecture: all
 Suggests: 
 Pre-Depends: wget
 Depends: 
-Description: Download Tor Browser Bundle 2.3.25-4 on package install
+Description: Download Tor Browser Bundle 2.3.25-10 on package install
   Make Tor Browser Bundle installable for every user.
