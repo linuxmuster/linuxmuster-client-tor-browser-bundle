@@ -11,6 +11,6 @@ Package: linuxmuster-client-tor-browser-bundle
 Architecture: all
 Suggests: 
 Pre-Depends: wget
-Depends: 
+Depends: liblog-log4perl-perl 
 Description: Download Tor Browser Bundle 2.3.25-14 on package install
   Make Tor Browser Bundle installable for every user.
