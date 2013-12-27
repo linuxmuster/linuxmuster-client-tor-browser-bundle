@@ -14,7 +14,7 @@ my $home=$ENV{'HOME'};
 my $UID_name=getpwuid($UID);
 my $EUID_name=getpwuid($EUID);
 
-my $version="2.3.25-14";
+my $version="3.5";
 my $tbb_lang="de";
 
 # configure logging
@@ -73,9 +73,9 @@ my $uname = `uname -m`;
 chomp($uname);
 
 if ($uname eq "x86_64"){
-    $tbb_file=$downloads."/tor-browser-gnu-linux-x86_64-".$version."-dev-".$tbb_lang.".tar.gz";
+    $tbb_file=$downloads."/tor-browser-linux64-".$version."_".$tbb_lang.".tar.xz";
 } elsif ($uname eq "i686"){
-    $tbb_file=$downloads."/tor-browser-gnu-linux-i686-".$version."-dev-".$tbb_lang.".tar.gz";
+    $tbb_file=$downloads."/tor-browser-linux32-".$version."_".$tbb_lang.".tar.xz";
 } else {
     print "\nCould not detect architecture of the kernel from $uname.\n\n";
     exit;
@@ -90,9 +90,9 @@ if (-d $target_dir){
 
 
 # Installing
-print "Unpacking $tbb_file to $target_dir\n";
+print "Unpacking\n  $tbb_file\n  to $target_dir\n";
 system("mkdir -p $target_dir");
-my $command="tar xzvf $tbb_file -C $target_dir";
+my $command="tar xJvf $tbb_file -C $target_dir";
 print "$command\n";
 system("$command");
 

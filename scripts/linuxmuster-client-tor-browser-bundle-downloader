@@ -1,24 +1,99 @@
 #!/bin/sh
 
+VERSION=3.5
 DOWNLOAD_LANG=de
-VERSION=2.3.25-14
+DOWNLOADS=/var/lib/linuxmuster-client-tor-browser-bundle/downloads/${DOWNLOAD_LANG}
+CLEANUP=/var/lib/linuxmuster-client-tor-browser-bundle
 
-echo "########## START: Downloading tor browser bundles"
-
-
-# Lang Schleife starts here
-DOWNLOADS=/var/lib/linuxmuster-client-tor-browser-bundle/downloads/$DOWNLOAD_LANG
 mkdir -p $DOWNLOADS
 
-# 32bit Version
-cd $DOWNLOADS; wget -t 10 -c --timestamping https://www.torproject.org/dist/torbrowser/linux/tor-browser-gnu-linux-i686-$VERSION-dev-$DOWNLOAD_LANG.tar.gz
-cd $DOWNLOADS; wget -t 10 -c --timestamping https://www.torproject.org/dist/torbrowser/linux/tor-browser-gnu-linux-i686-$VERSION-dev-$DOWNLOAD_LANG.tar.gz.asc
+# 32bit or 64bit
+ARCH=`uname -m`
 
-# 64bit Version
-cd $DOWNLOADS; wget -t 10 -c --timestamping https://www.torproject.org/dist/torbrowser/linux/tor-browser-gnu-linux-x86_64-$VERSION-dev-$DOWNLOAD_LANG.tar.gz
-cd $DOWNLOADS; wget -t 10 -c --timestamping https://www.torproject.org/dist/torbrowser/linux/tor-browser-gnu-linux-x86_64-$VERSION-dev-$DOWNLOAD_LANG.tar.gz.asc
+echo "Architecture with uname -m: $ARCH"
+echo "Architecture manually set: $1"
 
-# Lang Schleife ends here
+
+# Manual override
+case "$1" in
+    "")
+    # do nothing
+    ;;
+ 
+    32bit)
+    ARCH=32bit
+    ;;
+
+    64bit)
+    ARCH=64bit
+    ;;
+
+    cleanup)
+    #ls -al  $CLEANUP
+    echo "Removing $CLEANUP ...";
+    rm -rf $CLEANUP
+    exit
+    ;;
+
+    help)
+    echo " "
+    echo "Option: select architecture manually"
+    echo "   32bit    : Download 32bit linux"
+    echo "   32bit    : Download 64bit linux"
+    echo "   cleanup  : Delete all downloads"
+    echo " "
+
+    exit
+    ;;
+
+    *)
+    echo " "
+    echo "Use option 'help' for information"
+    echo " "
+    exit 0
+    ;;
+esac
+
+
+
+# Verifying
+# Get the keys
+# Erinn Clark
+#gpg --keyserver x-hkp://pool.sks-keyservers.net --recv-keys 0x416F061063FEE659
+
+
+
+# Download
+case "$ARCH" in
+    i686|32bit)
+    # 32bit Version
+    FILE="tor-browser-linux32-${VERSION}_${DOWNLOAD_LANG}.tar.xz"
+    WEB="https://www.torproject.org/dist/torbrowser/${VERSION}/"
+    cd $DOWNLOADS; wget -t 10 -c --timestamping $WEB$FILE
+    cd $DOWNLOADS; wget -t 10 -c --timestamping $WEB$FILE.asc
+    #cd $DOWNLOADS; gpg --verify $FILE $FILE.asc
+    ;;
+
+    x86_64|64bit)
+    # 64bit Version
+    FILE="tor-browser-linux64-${VERSION}_${DOWNLOAD_LANG}.tar.xz"
+    WEB="https://www.torproject.org/dist/torbrowser/${VERSION}/"
+    cd $DOWNLOADS; wget -t 10 -c --timestamping $WEB$FILE
+    cd $DOWNLOADS; wget -t 10 -c --timestamping $WEB$FILE.asc
+    #cd $DOWNLOADS; gpg --verify $FILE $FILE.asc
+    ;;
+
+    *)
+    echo " "
+    echo "I dont know if you have 32bit or 64bit system"
+    echo "Use option 'help' for information"
+    echo " "
+    exit 0
+    ;;
+esac
+
+
+
 
 
 echo "########## DONE: Downloading tor browser bundles"
