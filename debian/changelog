@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.2.1-1) precise; urgency=low
+
+  * New upstream TBB 3.5.1
+
+ -- bz <bz@overpower>  Sun, 02 Feb 2014 01:17:19 +0100
+
 linuxmuster-client-tor-browser-bundle (0.2.0-2) precise; urgency=low
 
   * New package for stable

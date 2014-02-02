@@ -19,3 +19,20 @@ Edit (=change Version number) in:
    3) debian/contol   
       First Line of package description
    4) dch -i -> New upstream Release 
+
+
+
+Test the changes with:
+
+# Test the download of the new TBB as root:
+cd scripts
+sudo ./linuxmuster-client-tor-browser-bundle-downloader
+
+# Test if the newly downloaded file is run as a normal user:
+cd scripts
+./linuxmuster-client-tor-browser-bundle
+
+# check if the new version was loaded
+# see version number at richt topmost corner of browser
+
+
