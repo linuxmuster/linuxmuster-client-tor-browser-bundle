@@ -14,7 +14,7 @@ my $home=$ENV{'HOME'};
 my $UID_name=getpwuid($UID);
 my $EUID_name=getpwuid($EUID);
 
-my $version="3.5.4";
+my $version="3.6.1";
 my $tbb_lang="de";
 
 # configure logging
