@@ -12,5 +12,5 @@ Architecture: all
 Suggests: 
 Pre-Depends: wget
 Depends: liblog-log4perl-perl 
-Description: Download Tor Browser Bundle 3.6.5
+Description: Download Tor Browser Bundle 4.0.1
   Make Tor Browser Bundle installable/usable for every user.
