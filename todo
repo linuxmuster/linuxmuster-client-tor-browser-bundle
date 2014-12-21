@@ -1,3 +1,26 @@
+Show menu:
+
+Right click on toolbar -> Menubar/Menüleiste
+
+
+save/restore some data to a defineable place TBBCONF (Einstellungen/tor-browser-bundle by default)
+  - after untarring tbb, ask if you want to copy data from TBBCONF
+  - to save
+     (is tbb ) 
+     A) extra script (must that be run before shutdown of ) 
+     B) hook in 
+
+  - save the following data: 
+    - bookmarks
+      tor-browser_de/Browser/TorBrowser/Data/Browser/profile.default/places.sqlite
+
+    - passwords?
+      To save passwords, private mode must be disabled
+    - certificates?
+
+
+
+
 - Veryfy with gnupg key after downloading:
 
 See:  https://www.torproject.org/docs/verifying-signatures.html.en

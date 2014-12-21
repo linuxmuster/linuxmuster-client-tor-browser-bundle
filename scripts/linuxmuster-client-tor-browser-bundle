@@ -17,6 +17,10 @@ my $EUID_name=getpwuid($EUID);
 my $version="4.0.2";
 my $tbb_lang="de";
 
+# path to settings
+my $settings="Einstellungen/tor-browser-bundle";
+my $settings_abs=$home."/".$settings;
+
 # configure logging
 my $log="/tmp/linuxmuster-client-tor-browser-bundle.log.".$UID_name;
 Log::Log4perl->easy_init({ 
@@ -96,10 +100,26 @@ my $command="tar xJvf $tbb_file -C $target_dir";
 print "$command\n";
 system("$command");
 
+# Restore settings
+# bookmarks
+my $bookmarks_saved=$settings_abs."/places.sqlite";
+my $bookmarks_current=$target_dir."/tor-browser_".$tbb_lang."/Browser/TorBrowser/Data/Browser/profile.default/places.sqlite";
+if (-e $bookmarks_saved){
+    # restore Bookmarks
+    print "Restoring bookamrks from:\n";
+    print "    $bookmarks_saved\n";
+    print "to\n";
+    print "    $bookmarks_current\n";
+    system("cp $bookmarks_saved $bookmarks_current\n");
+}
+
 
 # Starting
 my $binary=$target_dir."/tor-browser_de/start-tor-browser";
 system("$binary");
+
+# after clean shutdown
+print "Shutdown complete\n";
 
 
 

@@ -1,0 +1,6 @@
+
+linuxmuster-client-tor-browser-bundle 0.4.0 (2015-xx-yy)
+- save bookmarks manually from
+  tor-browser_de/Browser/TorBrowser/Data/Browser/profile.default/places.sqlite
+  to $HOME/Einstellungen/tor-browser-bundle/places.sqlite
+- on start, they will be used with TBB
