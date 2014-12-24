@@ -1,0 +1,58 @@
+Hoto use tbbcp (tor browser bundle copy)
+##################################################
+The Problem:
+if you enter the URL in the URL field in keepassx, then the URL is opened 
+with firefox (your default browser)
+What do you do with URL's that you ONLY want to access with Tr Browser Bundle?
+A double-click on an entry in keepassx might reveal your identity and a 
+double click will happen eventually by accident. 
+
+The solution:
+keepassx can execute a command instead of opening a URL. The URL is added as 
+an option to the command and will be copied to clipboard (primary)
+
+This is what you do:
+
+1. Copy the URL, for wich you want a username and password.
+   i.e. https://www.github.com
+2. In keepassx add the following to the URL field
+   cmd:///usr/bin/tbbcp  https://www.github.com
+3. Instead of opening https://www.github.com, th script tbbcp will copy
+   the URL to clipboard.
+4. Go to the Tor Browser window and insert the URL from clipboard into 
+   the URL-field using the middle Mouse button
+5. For username and password double-click on them in keepass and insert them 
+   with middle mouse button
+
+
+
+
+Technical Information
+############################################################
+X11 hat multiple buffers/clipboards
+keepassx uses the 'primary'
+(insert using middle mouse button)
+
+Primary Selection
+-> middle mouse button
+
+Secondary Selection
+- not often used
+
+Clipboard
+Edit/Paste Menu
+-> Ctrl-C / Ctrl-v
+-> Ctrl-C / Ctrl-Y
+
+
+How xclip works:
+############################################################
+To fill this buffers/clipboards use xclip:
+
+   echo "contents" | xclip -selection primary -i
+
+To show contents:
+
+   xclip -selection primary -out
+
+

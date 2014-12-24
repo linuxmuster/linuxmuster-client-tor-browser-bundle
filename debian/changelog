@@ -1,4 +1,10 @@
-linuxmuster-client-tor-browser-bundle (0.3.1-1) trusty; urgency=medium
+linuxmuster-client-tor-browser-bundle (0.4.0-1) trusty; urgency=medium
+
+  * New tbbcp script for keepassx
+
+ -- jeff <bz@adler>  Wed, 24 Dec 2014 18:07:47 +0100
+
+linuxmuster-client-tor-browser-bundle (0.3.1-1) precise; urgency=medium
 
   * New upstream TBB 4.0.2
 

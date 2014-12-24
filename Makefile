@@ -34,6 +34,8 @@ install:
 	@echo '   * Installing starter script'
 	@install -d -m755 -oroot -groot $(BIN)
 	@install -oroot -groot --mode=0775 scripts/linuxmuster-client-tor-browser-bundle $(BIN)
+	@echo '   * Installing Tor Browser Bundle copy script'
+	@install -oroot -groot --mode=0775 clipboardcopy/tbbcp $(BIN)
 	@echo '   * Installing unity dash entry'
 	@install -d -m0755 -oroot -groot $(DESKTOP)
 	@install -oroot -groot --mode=0644 icons/tor-browser-bundle.desktop $(DESKTOP)
