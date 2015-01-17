@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.4.1-1) trusty; urgency=medium
+
+  * New upstream TBB 4.0.3
+
+ -- bz <bz@overpower>  Sat, 17 Jan 2015 13:06:51 +0100
+
 linuxmuster-client-tor-browser-bundle (0.4.0-1) trusty; urgency=medium
 
   * New tbbcp script for keepassx
