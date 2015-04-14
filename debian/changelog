@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.4.5-1) trusty; urgency=medium
+
+  * New upstream TBB 4.0.8
+
+ -- jeff <bz@adler>  Wed, 15 Apr 2015 00:15:52 +0200
+
 linuxmuster-client-tor-browser-bundle (0.4.4-1) trusty; urgency=medium
 
   * New upstream TBB 4.0.6
