@@ -115,8 +115,9 @@ if (-e $bookmarks_saved){
 
 
 # Starting
-my $binary=$target_dir."/tor-browser_de/start-tor-browser";
-system("$binary");
+my $binary_dir=$target_dir."/tor-browser_de";
+my $binary="./start-tor-browser.desktop";
+system("cd $binary_dir; $binary");
 
 # after clean shutdown
 print "Shutdown complete\n";
