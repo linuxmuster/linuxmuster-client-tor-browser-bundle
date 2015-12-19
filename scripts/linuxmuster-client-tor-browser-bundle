@@ -14,7 +14,7 @@ my $home=$ENV{'HOME'};
 my $UID_name=getpwuid($UID);
 my $EUID_name=getpwuid($EUID);
 
-my $version="5.0.3";
+my $version="5.0.6";
 my $tbb_lang="de";
 
 # path to settings
