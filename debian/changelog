@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.5.6-xenial1) xenial-testing; urgency=medium
+
+  * First release for Ubuntu 16.04 xenial xerus
+
+ -- Dominik Foerderer <dominik-foerderer@windeck-gymnasium.de>  Thu, 09 Feb 2016 11:31:46 +0100
+ 
 linuxmuster-client-tor-browser-bundle (0.5.6-1) trusty; urgency=medium
 
   * New upstream TBB 5.5
