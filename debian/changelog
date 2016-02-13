@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.5.7-1) trusty; urgency=medium
+
+  * New upstream TBB 5.5.2
+
+ -- jeff <bz@adler>  Sat, 13 Feb 2016 18:25:16 +0100
+
 linuxmuster-client-tor-browser-bundle (0.5.6-2) xenial-testing; urgency=medium
 
   * First release for Ubuntu 16.04 xenial xerus
