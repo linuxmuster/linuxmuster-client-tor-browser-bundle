@@ -1,8 +1,45 @@
-linuxmuster-client-tor-browser-bundle (0.5.3-1) trusty; urgency=medium
+linuxmuster-client-tor-browser-bundle (0.5.8-1) trusty; urgency=medium
 
   * New upstream TBB 5.5.3
 
  -- bz <bz@overpower>  Thu, 10 Mar 2016 13:19:22 +0100
+
+linuxmuster-client-tor-browser-bundle (0.5.7-1) trusty; urgency=medium
+
+  * New upstream TBB 5.5.2
+
+ -- jeff <bz@adler>  Sat, 13 Feb 2016 18:25:16 +0100
+
+linuxmuster-client-tor-browser-bundle (0.5.6-2) xenial-testing; urgency=medium
+
+  * First release for Ubuntu 16.04 xenial xerus
+
+ -- Dominik Foerderer <dominik-foerderer@windeck-gymnasium.de>  Thu, 09 Feb 2016 11:31:46 +0100
+ 
+linuxmuster-client-tor-browser-bundle (0.5.6-1) trusty; urgency=medium
+
+  * New upstream TBB 5.5
+
+ -- Ruediger Beck <bz@j1009p16.bszleo.de>  Thu, 28 Jan 2016 18:31:46 +0100
+
+linuxmuster-client-tor-browser-bundle (0.5.5-1) trusty; urgency=medium
+
+  * New upstream TBB 5.0.7
+
+ -- jeff <bz@adler>  Fri, 08 Jan 2016 09:05:29 +0100
+
+linuxmuster-client-tor-browser-bundle (0.5.4-1) trusty; urgency=medium
+
+  * New upstream TBB 5.0.6
+
+ -- jeff <bz@adler>  Sat, 19 Dec 2015 09:48:00 +0100
+
+linuxmuster-client-tor-browser-bundle (0.5.3-1) trusty; urgency=medium
+
+  * New upstream TBB 5.0.4
+
+ -- jeff <bz@adler>  Sat, 07 Nov 2015 18:16:49 +0100
+>>>>>>> d4d8e3611fcedee61186eb85df20ed343e919b29
 
 linuxmuster-client-tor-browser-bundle (0.5.2-1) trusty; urgency=medium
 
