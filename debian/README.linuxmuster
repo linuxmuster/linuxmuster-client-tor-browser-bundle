@@ -35,4 +35,7 @@ cd scripts
 # check if the new version was loaded
 # see version number at richt topmost corner of browser
 
-
+Create Packages for:
+   precise until 17.04
+   trusty
+   xenial-testing
