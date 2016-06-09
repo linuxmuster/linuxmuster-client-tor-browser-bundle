@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.7.0-1) trusty; urgency=medium
+
+  * new upstream 6.0.1
+
+ -- Ruediger Beck <bz@j1010p20.bszleo.de>  Thu, 09 Jun 2016 12:17:21 +0200
+
 linuxmuster-client-tor-browser-bundle (0.6.0-1) xenial; urgency=medium
 
   * new upstream 5.5.5
