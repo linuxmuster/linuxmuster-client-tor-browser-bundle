@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.7.9-1) xenial; urgency=medium
+
+  * new upstream 6.5
+
+ -- jeff <bz@adler>  Fri, 10 Mar 2017 02:41:57 +0100
+
 linuxmuster-client-tor-browser-bundle (0.7.8-1) xenial; urgency=medium
 
   * new upstream 6.5
