@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=6.5.1
+VERSION=6.5.2
 DOWNLOAD_LANG=de
 DOWNLOADS=/var/lib/linuxmuster-client-tor-browser-bundle/downloads/${DOWNLOAD_LANG}
 CLEANUP=/var/lib/linuxmuster-client-tor-browser-bundle
@@ -61,7 +61,7 @@ esac
 # Erinn Clark
 #gpg --keyserver x-hkp://pool.sks-keyservers.net --recv-keys 0x416F061063FEE659
 
-
+OK=0
 
 # Download
 case "$ARCH" in
@@ -70,7 +70,13 @@ case "$ARCH" in
     FILE="tor-browser-linux32-${VERSION}_${DOWNLOAD_LANG}.tar.xz"
     WEB="https://www.torproject.org/dist/torbrowser/${VERSION}/"
     cd $DOWNLOADS; wget -t 10 -c --timestamping $WEB$FILE
+    RES1=$?
+    echo "Result download 1: $RES1"
+    OK="$(($OK+$RES1))"
     cd $DOWNLOADS; wget -t 10 -c --timestamping $WEB$FILE.asc
+    RES2=$?
+    echo "Result download 2: $RES2"
+    OK="$(($OK+$RES2))"
     #cd $DOWNLOADS; gpg --verify $FILE $FILE.asc
     ;;
 
@@ -79,8 +85,13 @@ case "$ARCH" in
     FILE="tor-browser-linux64-${VERSION}_${DOWNLOAD_LANG}.tar.xz"
     WEB="https://www.torproject.org/dist/torbrowser/${VERSION}/"
     cd $DOWNLOADS; wget -t 10 -c --timestamping $WEB$FILE
+    RES1=$?
+    echo "Result download 1: $RES1"
+    OK="$(($OK+$RES1))"
     cd $DOWNLOADS; wget -t 10 -c --timestamping $WEB$FILE.asc
-    #cd $DOWNLOADS; gpg --verify $FILE $FILE.asc
+    RES2=$?
+    echo "Result download 2: $RES2"
+    OK="$(($OK+$RES2))"
     ;;
 
     *)
@@ -93,7 +104,17 @@ case "$ARCH" in
 esac
 
 
+if [ $OK -eq 0 ]
+then
+    echo "All downloads were succesful: $OK";
+    echo "Deleting all files not containing $VERSION ...";
+    # remove all files NOT containing $VERSION string
+    ls -1 $DOWNLOADS | grep -v "$VERSION" | xargs rm -vf
+    echo "... done";
 
+else
+    echo "Not OK $OK";
+fi
 
 
 echo "########## DONE: Downloading tor browser bundles"
