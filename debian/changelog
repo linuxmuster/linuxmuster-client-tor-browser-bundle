@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.8.15-1) trusty; urgency=medium
+
+  * new upstream 8.0.1
+
+ -- jeff <bz@adler>  Sun, 23 Sep 2018 22:49:27 +0200
+
 linuxmuster-client-tor-browser-bundle (0.8.14-1) bionic-testing; urgency=medium
 
   * new upstream 8.0
