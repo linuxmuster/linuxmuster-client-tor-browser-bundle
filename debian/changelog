@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.8.16-1) xenial; urgency=medium
+
+  * new upstream 8.0.3
+
+ -- bz <bz@X220>  Mon, 29 Oct 2018 16:43:40 +0100
+
 linuxmuster-client-tor-browser-bundle (0.8.15-1) trusty; urgency=medium
 
   * new upstream 8.0.1
