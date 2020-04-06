@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.8.22-1) bionic; urgency=medium
+
+  * new upstream 9.0.8
+
+ -- bz <bz@overpower>  Mon, 06 Apr 2020 01:28:15 +0200
+
 linuxmuster-client-tor-browser-bundle (0.8.21-1) bionic; urgency=medium
 
   * new upstream 8.5.5 
