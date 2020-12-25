@@ -1,4 +1,10 @@
-linuxmuster-client-tor-browser-bundle (0.8.23-1) focal; urgency=medium
+linuxmuster-client-tor-browser-bundle (0.8.24-1) bionic; urgency=medium
+
+  * new upstream 10.0.7
+
+ -- bz <bz@adler>  Fri, 25 Dec 2020 14:15:43 +0100
+
+linuxmuster-client-tor-browser-bundle (0.8.23-1) bionic; urgency=medium
 
   * new upstream 10.0.5, packaged with focal fossa
 
