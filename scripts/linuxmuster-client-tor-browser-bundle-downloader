@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=10.0.7
+VERSION=10.0.13
 DOWNLOAD_LANG=de
 DOWNLOADS=/var/lib/linuxmuster-client-tor-browser-bundle/downloads/${DOWNLOAD_LANG}
 CLEANUP=/var/lib/linuxmuster-client-tor-browser-bundle

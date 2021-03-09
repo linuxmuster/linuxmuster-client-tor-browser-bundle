@@ -1,3 +1,9 @@
+linuxmuster-client-tor-browser-bundle (0.8.25-1) bionic; urgency=medium
+
+  * new upstream 10.0.13
+
+ -- bz <bz@adler>  Tue, 09 Mar 2021 11:05:24 +0100
+
 linuxmuster-client-tor-browser-bundle (0.8.24-1) bionic; urgency=medium
 
   * new upstream 10.0.7
